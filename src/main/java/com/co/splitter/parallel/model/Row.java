@@ -2,14 +2,15 @@ package com.co.splitter.parallel.model;
 
 import java.io.Serializable;
 
-public class Row implements Serializable{
+public class Row implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String url;
+	private String request;
 
 	public Row() {
 	}
@@ -25,5 +26,13 @@ public class Row implements Serializable{
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getRequest() {
+		return request;
+	}
+
+	public void setRequest(String request) {
+		this.request = request;
 	}
 }

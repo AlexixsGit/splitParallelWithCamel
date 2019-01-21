@@ -21,7 +21,7 @@ public class MainRoute extends RouteBuilder {
 
 		from("direct:main-route").routeId(ROUTE_ID).to("direct:validations-route").process(exchange -> {
 
-			if (exchange.getProperty("url1") != null) {
+			if (Boolean.parseBoolean(exchange.getProperty("ok").toString())) {
 				exchange.getIn().setBody(new SuccessResponse(true));
 			} else {
 				exchange.getIn().setBody(new ErrorResponse("it Couldn't processed"));
